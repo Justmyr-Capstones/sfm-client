@@ -1,0 +1,107 @@
+ <div className="grid grid-cols-1 container mx-auto my-8 p-8 bg-white shadow-lg">
+                <div className="grid-col-1">
+                    <h1 className="text-3xl font-bold mb-4">My Cart</h1>
+                </div>
+                <hr className="border-2 border-gray-300 mb-6" />
+
+                {/* Map through the cart items */}
+                {cart &&
+                    cart.map((cartItem) => {
+                        // Find the corresponding food item using foodmenuid
+                        const foodItem = foods.find(
+                            (food) => food.foodmenuid === cartItem.foodmenuid
+                        );
+
+                        return (
+                            <div
+                                key={cartItem.cartid}
+                                className="grid grid-cols-5 mb-2"
+                            >
+                                <div className="grid-col-1">
+                                    <input
+                                        type="checkbox"
+                                        id={`checkbox{cartItem.cartid}`}
+                                        name={`checkbox{cartItem.cartid}`}
+                                        value={`check{cartItem.cartid}`}
+                                        checked={checkedItems.includes(
+                                            cartItem.cartid
+                                        )}
+                                        onChange={() =>
+                                            handleCheckboxChange(
+                                                cartItem.cartid
+                                            )
+                                        }
+                                    />
+                                    <label
+                                        htmlFor={`checkbox{cartItem.cartid}`}
+                                    ></label>
+                                </div>
+                                <div className="grid-col-1">
+                                    {/* <img
+                                    src={foodItem.foodmenuimage} // Assuming foodmenuimage is the correct property
+
+                                    alt={foodItem.foodmenuname}
+                                    className="h-5 w-5"
+                                /> */}
+                                </div>
+                                <div className="grid-col-1">
+                                    <h1>{foodItem.foodmenuname}</h1>
+                                </div>
+                                <div className="grid-col-1 flex justify-start gap-2">
+                                    <button
+                                        className="quantity-btn"
+                                        onClick={() =>
+                                            handleQuantityChange(
+                                                cartItem.cartid,
+                                                -1
+                                            )
+                                        }
+                                    >
+                                        -
+                                    </button>
+                                    <input
+                                        type="text"
+                                        value={
+                                            updatedQuantity[cartItem.cartid] ||
+                                            cartItem.quantity
+                                        }
+                                        className="w-5"
+                                        readOnly
+                                    />
+                                    <button
+                                        className="quantity-btn"
+                                        onClick={() =>
+                                            handleQuantityChange(
+                                                cartItem.cartid,
+                                                1
+                                            )
+                                        }
+                                    >
+                                        +
+                                    </button>
+                                </div>
+                                <div className="grid-col-1">
+                                    {/* <button className="edit bg-red-500 text-white px-4 py-2 rounded hover:bg-blue-700">
+                                    Edit
+                                </button> */}
+                                    <button
+                                        className="delete bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700"
+                                        onClick={() =>
+                                            deleteCart(cartItem.cartid)
+                                        }
+                                    >
+                                        Delete
+                                    </button>
+                                </div>
+                            </div>
+                        );
+                    })}
+                <div>
+                    <button
+                        type="submit"
+                        className="place-order-btn bg-red-500 text-white px-4 py-2 rounded hover:bg-blue-700"
+                    >
+                        Settlement Amount:
+                    </button>
+                </div>
+            </div>
