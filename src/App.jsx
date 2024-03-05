@@ -14,7 +14,7 @@ import Profile from "./pages/Profile";
 import Branch from "./pages/Branch";
 import Admin from "./pages/Admin";
 import OrderHIstory from "./pages/OrderHIstory";
-import ForgotPassword from "./pages/ForgotPassword";
+import ForgotPassword from "./pages/forgotpassword";
 import AddressBooks from "./pages/AddressBooks";
 
 function App() {
