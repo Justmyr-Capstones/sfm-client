@@ -22,11 +22,18 @@ jobs:
 
     - name: Build
       run: npm run build
-
-    - name: Set Git configurations
+    -name: Setup Github Config
       run: |
         git config --global user.email "marklowelmontealto14@gmail.com"
         git config --global user.name "KuyaGit"
+
+    - name: Delete existing files in prod branch
+      run: |
+        git clone --single-branch --branch prod https://github.com/${{ github.repository }} temp-prod
+        cd temp-prod
+        git rm -rf .
+        git commit -m "Remove existing files and folders"
+        git push origin prod
       if: success()
 
     - name: Deploy
@@ -37,12 +44,3 @@ jobs:
         publish_dir: dist # Change this to your build directory
         enable_jekyll: true
         publish_branch: prod
-
-    - name: Delete existing files in prod branch
-      run: |
-        git clone --single-branch --branch prod https://github.com/${{ github.repository }} temp-prod
-        cd temp-prod
-        git rm -rf .
-        git commit -m "Remove existing files and folders"
-        git push origin prod
-      if: success()
