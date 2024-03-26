@@ -23,6 +23,12 @@ jobs:
     - name: Build
       run: npm run build
 
+    - name: Set Git configurations
+      run: |
+        git config --global user.email "marklowelmontealto14@gmail.com"
+        git config --global user.name "KuyaGit"
+      if: success()
+
     - name: Delete existing files in prod branch
       run: |
         git clone --single-branch --branch prod https://github.com/${{ github.repository }} temp-prod
