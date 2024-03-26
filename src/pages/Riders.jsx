@@ -67,7 +67,7 @@ const Riders = () => {
     useEffect(() => {
         const getRiders = async () => {
             const response = await fetch(
-                "https://santafetaguktukan.online/api/rider",
+                "https://sfm-dbcc0a8f87a3.herokuapp.com//api/rider",
                 {
                     method: "GET",
                     headers: {
@@ -82,7 +82,7 @@ const Riders = () => {
         setReload(false);
         const getBranch = async () => {
             const response = await fetch(
-                "https://santafetaguktukan.online/api/branch",
+                "https://sfm-dbcc0a8f87a3.herokuapp.com//api/branch",
                 {
                     method: "GET",
                     headers: {
