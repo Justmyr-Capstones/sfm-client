@@ -29,15 +29,6 @@ jobs:
         git config --global user.name "KuyaGit"
       if: success()
 
-    - name: Delete existing files in prod branch
-      run: |
-        git clone --single-branch --branch prod https://github.com/${{ github.repository }} temp-prod
-        cd temp-prod
-        git rm -rf .
-        git commit -m "Remove existing files and folders"
-        git push origin prod
-      if: success()
-
     - name: Deploy
       if: success()
       uses: peaceiris/actions-gh-pages@v3
@@ -46,3 +37,12 @@ jobs:
         publish_dir: dist # Change this to your build directory
         enable_jekyll: true
         publish_branch: prod
+
+    - name: Delete existing files in prod branch
+      run: |
+        git clone --single-branch --branch prod https://github.com/${{ github.repository }} temp-prod
+        cd temp-prod
+        git rm -rf .
+        git commit -m "Remove existing files and folders"
+        git push origin prod
+      if: success()
