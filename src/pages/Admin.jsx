@@ -76,7 +76,7 @@ const Users = () => {
             if (result.isConfirmed) {
                 try {
                     const response = await fetch(
-                        `https://santafetaguktukan.online/api/admin/`, // Assuming there's a route to update a specific admin by ID
+                        `https://sfm-dbcc0a8f87a3.herokuapp.com/api/admin/`, // Assuming there's a route to update a specific admin by ID
                         {
                             method: "PATCH", // Use the appropriate HTTP method for updating
                             headers: {
@@ -107,7 +107,7 @@ const Users = () => {
         const fetchAdmins = async () => {
             try {
                 const response = await fetch(
-                    "https://santafetaguktukan.online/api/admin"
+                    "https://sfm-dbcc0a8f87a3.herokuapp.com/api/admin"
                 );
                 const data = await response.json();
                 if (search !== "") {
@@ -133,7 +133,7 @@ const Users = () => {
         const fetchBranches = async () => {
             try {
                 const response = await fetch(
-                    "https://santafetaguktukan.online/api/branch"
+                    "https://sfm-dbcc0a8f87a3.herokuapp.com/api/branch"
                 );
                 const data = await response.json();
                 setBranches(data);
@@ -159,7 +159,7 @@ const Users = () => {
             if (result.isConfirmed) {
                 try {
                     const response = await fetch(
-                        `https://santafetaguktukan.online/api/admin/delete/${row.adminid}`,
+                        `https://sfm-dbcc0a8f87a3.herokuapp.com/api/admin/delete/${row.adminid}`,
                         {
                             method: "DELETE",
                         }
@@ -271,7 +271,7 @@ const Users = () => {
             if (result.isConfirmed) {
                 try {
                     const response = await fetch(
-                        "https://santafetaguktukan.online/api/admins",
+                        "https://sfm-dbcc0a8f87a3.herokuapp.com/api/admins",
                         {
                             method: "POST",
                             headers: {

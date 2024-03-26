@@ -30,7 +30,7 @@ const Cart = () => {
         setLoading(true);
         try {
             const response = await fetch(
-                `https://santafetaguktukan.online/api/cart/inner/${ID}`,
+                `https://sfm-dbcc0a8f87a3.herokuapp.com/api/cart/inner/${ID}`,
                 {
                     method: "GET",
                     headers: {
@@ -73,7 +73,7 @@ const Cart = () => {
             if (result.isConfirmed) {
                 try {
                     const response = await fetch(
-                        `https://santafetaguktukan.online/api/cart/delete/item/${cartID}`,
+                        `https://sfm-dbcc0a8f87a3.herokuapp.com/api/cart/delete/item/${cartID}`,
                         {
                             method: "DELETE",
                             headers: {
@@ -132,7 +132,7 @@ const Cart = () => {
     const getAddresses = async () => {
         try {
             const response = await fetch(
-                `https://santafetaguktukan.online/api/address/${ID}`,
+                `https://sfm-dbcc0a8f87a3.herokuapp.com/api/address/${ID}`,
                 {
                     method: "GET",
                     headers: {
@@ -151,7 +151,7 @@ const Cart = () => {
     const getBranches = async () => {
         try {
             const response = await fetch(
-                `https://santafetaguktukan.online/api/branch`,
+                `https://sfm-dbcc0a8f87a3.herokuapp.com/api/branch`,
                 {
                     method: "GET",
                     headers: {
@@ -188,7 +188,7 @@ const Cart = () => {
                     const customerorderid =
                         Math.floor(Math.random() * 999999) + 100000;
                     const response = await fetch(
-                        `https://santafetaguktukan.online/api/order/add`,
+                        `https://sfm-dbcc0a8f87a3.herokuapp.com/api/order/add`,
                         {
                             method: "POST",
                             headers: {
@@ -216,7 +216,7 @@ const Cart = () => {
                             if (checkedProducts.includes(cartDetail.cartid)) {
                                 try {
                                     const response = await fetch(
-                                        `https://santafetaguktukan.online/api/order/item/add`,
+                                        `https://sfm-dbcc0a8f87a3.herokuapp.com/api/order/item/add`,
                                         {
                                             method: "POST",
                                             headers: {
@@ -246,7 +246,7 @@ const Cart = () => {
                                     if (response.ok) {
                                         try {
                                             const response = await fetch(
-                                                `https://santafetaguktukan.online/api/cart/delete/item/${cartDetail.cartid}`,
+                                                `https://sfm-dbcc0a8f87a3.herokuapp.com/api/cart/delete/item/${cartDetail.cartid}`,
                                                 {
                                                     method: "DELETE",
                                                     headers: {
@@ -333,7 +333,7 @@ const Cart = () => {
     const updateQuantity = async (cartID, quantity) => {
         try {
             const response = await fetch(
-                `https://santafetaguktukan.online/api/cart/update/${cartID}`,
+                `https://sfm-dbcc0a8f87a3.herokuapp.com/api/cart/update/${cartID}`,
                 {
                     method: "PATCH",
                     headers: {
@@ -364,7 +364,7 @@ const Cart = () => {
         const UpdateQuantity = async (cartID) => {
             try {
                 const response = await fetch(
-                    `https://santafetaguktukan.online/api/cart/update/${cartID}`,
+                    `https://sfm-dbcc0a8f87a3.herokuapp.com/api/cart/update/${cartID}`,
                     {
                         method: "PATCH",
                         headers: {
@@ -415,7 +415,7 @@ const Cart = () => {
             if (result.isConfirmed) {
                 try {
                     const response = await fetch(
-                        `https://santafetaguktukan.online/api/cart/delete/all/${ID}`,
+                        `https://sfm-dbcc0a8f87a3.herokuapp.com/api/cart/delete/all/${ID}`,
                         {
                             method: "DELETE",
                             headers: {

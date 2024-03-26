@@ -66,7 +66,7 @@ const Address = ({}) => {
 
         if (confirmed.isConfirmed) {
             const response = await fetch(
-                "https://santafetaguktukan.online/api/address/add",
+                "https://sfm-dbcc0a8f87a3.herokuapp.com/api/address/add",
                 {
                     method: "POST",
                     headers: {

@@ -27,7 +27,7 @@ const AddRiderModal = ({ showModal, setShowModal, setReload }) => {
         console.log(rider);
 
         const response = await fetch(
-            "https://santafetaguktukan.online/api/rider/add",
+            "https://sfm-dbcc0a8f87a3.herokuapp.com/api/rider/add",
             {
                 method: "POST",
                 headers: {
@@ -45,7 +45,7 @@ const AddRiderModal = ({ showModal, setShowModal, setReload }) => {
     useEffect(() => {
         const getBranches = async () => {
             const response = await fetch(
-                "https://santafetaguktukan.online/api/branch"
+                "https://sfm-dbcc0a8f87a3.herokuapp.com/api/branch"
             );
             const data = await response.json();
             setBranches(data);

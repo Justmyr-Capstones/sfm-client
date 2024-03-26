@@ -43,7 +43,7 @@ const ForgotPassword = () => {
         e.preventDefault();
 
         const response = await fetch(
-            "https://santafetaguktukan.online/api/customer/email",
+            "https://sfm-dbcc0a8f87a3.herokuapp.com/api/customer/email",
             {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -159,7 +159,7 @@ const ForgotPassword = () => {
 
             const body = { email, password };
             const response = await fetch(
-                "https://santafetaguktukan.online/api/customer/forgotpassword",
+                "https://sfm-dbcc0a8f87a3.herokuapp.com/api/customer/forgotpassword",
                 {
                     method: "PATCH",
                     headers: { "Content-Type": "application/json" },

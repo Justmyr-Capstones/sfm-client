@@ -61,7 +61,7 @@ const Menu = () => {
     useEffect(() => {
         const fetchBranchLocation = async () => {
             const responseBranchLocation = await fetch(
-                "https://santafetaguktukan.online/api/branch"
+                "https://sfm-dbcc0a8f87a3.herokuapp.com/api/branch"
             );
             const dataBranchLocation = await responseBranchLocation.json();
 
@@ -76,7 +76,7 @@ const Menu = () => {
     }, []);
 
     const fetchData = async () => {
-        let apiUrl = "https://santafetaguktukan.online/api/food";
+        let apiUrl = "https://sfm-dbcc0a8f87a3.herokuapp.com/api/food";
 
         try {
             const response = await fetch(apiUrl);
@@ -124,12 +124,12 @@ const Menu = () => {
                 await fetchData();
 
                 const responseFoodPrice = await fetch(
-                    "https://santafetaguktukan.online/api/food/price"
+                    "https://sfm-dbcc0a8f87a3.herokuapp.com/api/food/price"
                 );
                 const dataFoodPrice = await responseFoodPrice.json();
 
                 const responseRider = await fetch(
-                    "https://santafetaguktukan.online/api/rider"
+                    "https://sfm-dbcc0a8f87a3.herokuapp.com/api/rider"
                 );
                 const dataRider = await responseRider.json();
                 setRider(dataRider);
@@ -141,13 +141,13 @@ const Menu = () => {
                 const userID = localStorage.getItem("userID");
                 if (userID) {
                     const responseCart = await fetch(
-                        `https://santafetaguktukan.online/api/cart/${userID}`
+                        `https://sfm-dbcc0a8f87a3.herokuapp.com/api/cart/${userID}`
                     );
                     const dataCart = await responseCart.json();
                     setCart(dataCart);
 
                     const responseAddresses = await fetch(
-                        `https://santafetaguktukan.online/api/address/${userID}`
+                        `https://sfm-dbcc0a8f87a3.herokuapp.com/api/address/${userID}`
                     );
                     const dataAddresses = await responseAddresses.json();
                     console.log("dataAddresses:", dataAddresses, "asdasdasd");
@@ -160,7 +160,7 @@ const Menu = () => {
                     setSelectedAddress(dataAddresses);
 
                     const responseFavoriteFoods = await fetch(
-                        `https://santafetaguktukan.online/api/order/most/${userID}`
+                        `https://sfm-dbcc0a8f87a3.herokuapp.com/api/order/most/${userID}`
                     );
                     const dataFavoriteFoods =
                         await responseFavoriteFoods.json();
@@ -171,7 +171,7 @@ const Menu = () => {
                 }
 
                 const responseBestSeller = await fetch(
-                    "https://santafetaguktukan.online/api/order/best"
+                    "https://sfm-dbcc0a8f87a3.herokuapp.com/api/order/best"
                 );
                 const dataBestSeller = await responseBestSeller.json();
                 setBestSeller(dataBestSeller);
@@ -188,7 +188,7 @@ const Menu = () => {
     const deleteFromCart = async (cartID) => {
         try {
             const response = await fetch(
-                "https://santafetaguktukan.online/api/cart/delete/item/" +
+                "https://sfm-dbcc0a8f87a3.herokuapp.com/api/cart/delete/item/" +
                     cartID,
                 {
                     method: "DELETE",
@@ -265,7 +265,7 @@ const Menu = () => {
         const fetchAvailableData = async (branchID) => {
             try {
                 const response = await fetch(
-                    `https://santafetaguktukan.online/api/availability/branch/${branchID}`
+                    `https://sfm-dbcc0a8f87a3.herokuapp.com/api/availability/branch/${branchID}`
                 );
 
                 const data = await response.json();
@@ -360,7 +360,7 @@ const Menu = () => {
                 console.log(order);
                 try {
                     const response = await fetch(
-                        "https://santafetaguktukan.online/api/order/add",
+                        "https://sfm-dbcc0a8f87a3.herokuapp.com/api/order/add",
                         {
                             method: "POST",
                             headers: {
@@ -392,7 +392,7 @@ const Menu = () => {
                             console.log(orderItem);
                             try {
                                 const response = await fetch(
-                                    "https://santafetaguktukan.online/api/order/item/add",
+                                    "https://sfm-dbcc0a8f87a3.herokuapp.com/api/order/item/add",
                                     {
                                         method: "POST",
                                         headers: {
@@ -414,7 +414,7 @@ const Menu = () => {
 
                         try {
                             const responseDeleteCart = await fetch(
-                                "https://santafetaguktukan.online/api/customer/cart/delete/" +
+                                "https://sfm-dbcc0a8f87a3.herokuapp.com/api/customer/cart/delete/" +
                                     customerID,
                                 {
                                     method: "DELETE",

@@ -74,7 +74,7 @@ const Sidebar = () => {
         const fetchAdmin = async () => {
             try {
                 const response = await fetch(
-                    `https://santafetaguktukan.online/api/admin/${id}`
+                    `https://sfm-dbcc0a8f87a3.herokuapp.com/api/admin/${id}`
                 );
                 const data = await response.json();
                 setAdmin(data);
@@ -86,7 +86,7 @@ const Sidebar = () => {
         const getOrderCount = async () => {
             try {
                 const response = await fetch(
-                    `https://santafetaguktukan.online/api/order/count/notcompleted/${id}`
+                    `https://sfm-dbcc0a8f87a3.herokuapp.com/api/order/count/notcompleted/${id}`
                 );
                 const data = await response.json();
                 setOrderCount(data.count);

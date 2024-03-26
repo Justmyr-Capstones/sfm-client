@@ -28,7 +28,7 @@ const Orders = () => {
         const fetchData = async () => {
             try {
                 const adminResponse = await fetch(
-                    `https://santafetaguktukan.online/api/admin/${id}`
+                    `https://sfm-dbcc0a8f87a3.herokuapp.com/api/admin/${id}`
                 );
                 const adminData = await adminResponse.json();
                 setAdmin(adminData);
@@ -37,7 +37,7 @@ const Orders = () => {
 
                 if (adminBranchId) {
                     const ordersResponse = await fetch(
-                        `https://santafetaguktukan.online/api/orders/${adminBranchId}`,
+                        `https://sfm-dbcc0a8f87a3.herokuapp.com/api/orders/${adminBranchId}`,
                         {
                             method: "GET",
                             headers: {

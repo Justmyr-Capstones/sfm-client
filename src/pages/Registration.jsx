@@ -214,7 +214,7 @@ const Registration = () => {
             };
 
             const customerResponse = await fetch(
-                "https://santafetaguktukan.online/api/customer/register",
+                "https://sfm-dbcc0a8f87a3.herokuapp.com/api/customer/register",
                 {
                     method: "POST",
                     headers: {
@@ -243,7 +243,7 @@ const Registration = () => {
             };
 
             const addressResponse = await fetch(
-                "https://santafetaguktukan.online/api/address/add",
+                "https://sfm-dbcc0a8f87a3.herokuapp.com/api/address/add",
                 {
                     method: "POST",
                     headers: {

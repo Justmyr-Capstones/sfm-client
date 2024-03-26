@@ -21,7 +21,7 @@ const Available = ({ showModal, setShowModal, foodMenuID, setReload }) => {
         const fetchAdmin = async () => {
             try {
                 const response = await fetch(
-                    `https://santafetaguktukan.online/api/admin/${id}`
+                    `https://sfm-dbcc0a8f87a3.herokuapp.com/api/admin/${id}`
                 );
                 const data = await response.json();
                 setAdmin(data);
@@ -43,7 +43,7 @@ const Available = ({ showModal, setShowModal, foodMenuID, setReload }) => {
                     foodMenuID: foodMenuID,
                 };
                 const response = await fetch(
-                    `https://santafetaguktukan.online/api/availability/`,
+                    `https://sfm-dbcc0a8f87a3.herokuapp.com/api/availability/`,
                     {
                         method: "POST",
                         headers: {
@@ -81,7 +81,7 @@ const Available = ({ showModal, setShowModal, foodMenuID, setReload }) => {
         const getFoodPrice = async () => {
             try {
                 const response = await fetch(
-                    `https://santafetaguktukan.online/api/food/price/${foodMenuID}/${admin.branchid}`
+                    `https://sfm-dbcc0a8f87a3.herokuapp.com/api/food/price/${foodMenuID}/${admin.branchid}`
                 );
                 const jsonData = await response.json();
                 setFoodPrice(jsonData);
@@ -115,7 +115,7 @@ const Available = ({ showModal, setShowModal, foodMenuID, setReload }) => {
                         available: selectedOption,
                     };
                     const response = await fetch(
-                        `https://santafetaguktukan.online/api/availability/update`,
+                        `https://sfm-dbcc0a8f87a3.herokuapp.com/api/availability/update`,
                         {
                             method: "PATCH",
                             headers: {
@@ -145,7 +145,7 @@ const Available = ({ showModal, setShowModal, foodMenuID, setReload }) => {
                                         };
 
                                         const priceResponse = await fetch(
-                                            `https://santafetaguktukan.online/api/food/price/update/${price.foodmenupriceid}`,
+                                            `https://sfm-dbcc0a8f87a3.herokuapp.com/api/food/price/update/${price.foodmenupriceid}`,
                                             {
                                                 method: "PATCH",
                                                 headers: {

@@ -31,7 +31,7 @@ const Login = () => {
             };
 
             const customerResponse = await fetch(
-                "https://santafetaguktukan.online/api/customer/login",
+                "https://sfm-dbcc0a8f87a3.herokuapp.com/api/customer/login",
                 {
                     method: "POST",
                     headers: {
@@ -63,7 +63,7 @@ const Login = () => {
                 };
 
                 const adminResponse = await fetch(
-                    "https://santafetaguktukan.online/api/admin/login",
+                    "https://sfm-dbcc0a8f87a3.herokuapp.com/api/admin/login",
                     {
                         method: "POST",
                         headers: {
@@ -96,7 +96,7 @@ const Login = () => {
                     };
 
                     const superadminResponse = await fetch(
-                        "https://santafetaguktukan.online/api/superadmin/login",
+                        "https://sfm-dbcc0a8f87a3.herokuapp.com/api/superadmin/login",
                         {
                             method: "POST",
                             headers: {
