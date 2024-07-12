@@ -31,7 +31,7 @@ const Branch = () => {
     useEffect(() => {
         const branchFetch = async () => {
             const response = await fetch(
-                `https://sfm-dbcc0a8f87a3.herokuapp.com/api/branch`
+                `https://sfm-api-production.up.railway.app/api/branch`
             );
             const data = await response.json();
             setBranch(data);
@@ -123,7 +123,7 @@ const Branch = () => {
             if (result.isConfirmed) {
                 try {
                     const response = await fetch(
-                        `https://sfm-dbcc0a8f87a3.herokuapp.com/api/branch/update`,
+                        `https://sfm-api-production.up.railway.app/api/branch/update`,
                         {
                             method: "PATCH",
                             headers: {
@@ -185,7 +185,7 @@ const Branch = () => {
         e.preventDefault();
         try {
             const response = await fetch(
-                "https://sfm-dbcc0a8f87a3.herokuapp.com/api/branch",
+                "https://sfm-api-production.up.railway.app/api/branch",
                 {
                     method: "POST",
                     headers: {

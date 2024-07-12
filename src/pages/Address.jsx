@@ -66,7 +66,7 @@ const Address = ({}) => {
 
         if (confirmed.isConfirmed) {
             const response = await fetch(
-                "https://sfm-dbcc0a8f87a3.herokuapp.com/api/address/add",
+                "https://sfm-api-production.up.railway.app/api/address/add",
                 {
                     method: "POST",
                     headers: {

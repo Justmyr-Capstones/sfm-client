@@ -19,7 +19,7 @@ const Navbar = () => {
         if (customerID !== null) {
             const getCustomer = async () => {
                 const response = await fetch(
-                    `https://sfm-dbcc0a8f87a3.herokuapp.com/api/customer/${customerID}`
+                    `https://sfm-api-production.up.railway.app/api/customer/${customerID}`
                 );
 
                 if (response.ok) {

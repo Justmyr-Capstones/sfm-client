@@ -32,14 +32,14 @@ const Customer = () => {
     useEffect(() => {
         const fetchAddress = async () => {
             const response = await fetch(
-                `https://sfm-dbcc0a8f87a3.herokuapp.com/api/address/${selectedCustomerID}`
+                `https://sfm-api-production.up.railway.app/api/address/${selectedCustomerID}`
             );
             const data = await response.json();
             setAddresses(data);
         };
         const fetchOrders = async () => {
             const response = await fetch(
-                `https://sfm-dbcc0a8f87a3.herokuapp.com/api/order/${selectedCustomerID}`
+                `https://sfm-api-production.up.railway.app/api/order/${selectedCustomerID}`
             );
             const data = await response.json();
             setOrders(data);
@@ -258,10 +258,10 @@ const Customer = () => {
     useEffect(() => {
         //
         const fetchData = async () => {
-            let apiUrl = "https://sfm-dbcc0a8f87a3.herokuapp.com/api/customer";
+            let apiUrl = "https://sfm-api-production.up.railway.app/api/customer";
 
             if (search) {
-                apiUrl = `https://sfm-dbcc0a8f87a3.herokuapp.com/api/customer/search/${search}`;
+                apiUrl = `https://sfm-api-production.up.railway.app/api/customer/search/${search}`;
             }
 
             const response = await fetch(apiUrl);

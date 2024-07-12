@@ -26,7 +26,7 @@ const UpdateFoodModal = ({ showModal, setShowModal, foodData, setReload }) => {
         const getFoodPrice = async () => {
             try {
                 const response = await fetch(
-                    `https://sfm-dbcc0a8f87a3.herokuapp.com/api/food/price/${foodData.foodmenuid}`
+                    `https://sfm-api-production.up.railway.app/api/food/price/${foodData.foodmenuid}`
                 );
                 const jsonData = await response.json();
 
@@ -65,7 +65,7 @@ const UpdateFoodModal = ({ showModal, setShowModal, foodData, setReload }) => {
             };
         }
         const response = await fetch(
-            `https://sfm-dbcc0a8f87a3.herokuapp.com/api/food/update/${foodMenuID}`,
+            `https://sfm-api-production.up.railway.app/api/food/update/${foodMenuID}`,
             {
                 method: "PATCH",
                 headers: {

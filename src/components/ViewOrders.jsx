@@ -13,7 +13,7 @@ const ViewOrders = ({ setShowOrderDetailsModal, selectedOrder, setReload }) => {
         const getOrderList = async () => {
             try {
                 const response = await fetch(
-                    `https://sfm-dbcc0a8f87a3.herokuapp.com/api/order/item/${selectedOrder.customerorderid}`,
+                    `https://sfm-api-production.up.railway.app/api/order/item/${selectedOrder.customerorderid}`,
                     {
                         method: "GET",
                         headers: {
@@ -32,7 +32,7 @@ const ViewOrders = ({ setShowOrderDetailsModal, selectedOrder, setReload }) => {
         const getAddress = async () => {
             try {
                 const response = await fetch(
-                    `https://sfm-dbcc0a8f87a3.herokuapp.com/api/address/${selectedOrder.customerid}`,
+                    `https://sfm-api-production.up.railway.app/api/address/${selectedOrder.customerid}`,
                     {
                         method: "GET",
                         headers: {
@@ -51,7 +51,7 @@ const ViewOrders = ({ setShowOrderDetailsModal, selectedOrder, setReload }) => {
         const getCustomer = async () => {
             try {
                 const response = await fetch(
-                    `https://sfm-dbcc0a8f87a3.herokuapp.com/api/customer/${selectedOrder.customerid}`,
+                    `https://sfm-api-production.up.railway.app/api/customer/${selectedOrder.customerid}`,
                     {
                         method: "GET",
                         headers: {
@@ -131,7 +131,7 @@ const ViewOrders = ({ setShowOrderDetailsModal, selectedOrder, setReload }) => {
             if (result.isConfirmed) {
                 try {
                     const response = await fetch(
-                        `https://sfm-dbcc0a8f87a3.herokuapp.com/api/order/process/${selectedOrder.customerorderid}`,
+                        `https://sfm-api-production.up.railway.app/api/order/process/${selectedOrder.customerorderid}`,
                         {
                             method: "PATCH",
                             headers: {

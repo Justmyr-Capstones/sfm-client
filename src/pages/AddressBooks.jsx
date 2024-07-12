@@ -14,7 +14,7 @@ const AddressBooks = () => {
         const getAddress = async () => {
             try {
                 const response = await fetch(
-                    `https://sfm-dbcc0a8f87a3.herokuapp.com/api/address/${ID}`
+                    `https://sfm-api-production.up.railway.app/api/address/${ID}`
                 );
                 const jsonData = await response.json();
                 setAddress(jsonData);
@@ -50,7 +50,7 @@ const AddressBooks = () => {
         console.log(editedAddress, "ID");
         try {
             const response = await fetch(
-                `https://sfm-dbcc0a8f87a3.herokuapp.com/api/address/update`,
+                `https://sfm-api-production.up.railway.app/api/address/update`,
                 {
                     method: "PATCH",
                     headers: {

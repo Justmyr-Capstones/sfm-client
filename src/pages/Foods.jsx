@@ -40,7 +40,7 @@ const Foods = () => {
     const [isReloading, setIsReloading] = useState(false);
 
     const fetchData = async () => {
-        let apiUrl = "https://sfm-dbcc0a8f87a3.herokuapp.com/api/food";
+        let apiUrl = "https://sfm-api-production.up.railway.app/api/food";
 
         if (search !== "") {
             apiUrl += `/search/${search}`;

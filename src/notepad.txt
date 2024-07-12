@@ -24,7 +24,7 @@ const Orders = () => {
 
     useEffect(() => {
         const adminFetch = async () => {
-            const response = await fetch(`https://sfm-dbcc0a8f87a3.herokuapp.com/api/admin/${id}`);
+            const response = await fetch(`https://sfm-api-production.up.railway.app/api/admin/${id}`);
             const data = await response.json();
             setAdmin(data);
         };
@@ -43,7 +43,7 @@ const Orders = () => {
             }
 
             const response = await fetch(
-                `https://sfm-dbcc0a8f87a3.herokuapp.com/api/orders/${admin.branchid}`,
+                `https://sfm-api-production.up.railway.app/api/orders/${admin.branchid}`,
                 {
                     method: "GET",
                     headers: {

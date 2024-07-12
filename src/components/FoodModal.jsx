@@ -89,7 +89,7 @@ const FoodModal = ({
 
             if (confirmed.isConfirmed) {
                 const response = await fetch(
-                    "https://sfm-dbcc0a8f87a3.herokuapp.com/api/cart/add",
+                    "https://sfm-api-production.up.railway.app/api/cart/add",
                     {
                         method: "POST",
                         headers: {
@@ -132,7 +132,7 @@ const FoodModal = ({
         const getFoodPrices = async () => {
             try {
                 const response = await fetch(
-                    `https://sfm-dbcc0a8f87a3.herokuapp.com/api/food/price`,
+                    `https://sfm-api-production.up.railway.app/api/food/price`,
                     {
                         method: "GET",
                         headers: {

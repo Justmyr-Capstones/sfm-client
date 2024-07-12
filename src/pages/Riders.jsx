@@ -67,7 +67,7 @@ const Riders = () => {
     useEffect(() => {
         const getRiders = async () => {
             const response = await fetch(
-                "https://sfm-dbcc0a8f87a3.herokuapp.com/api/rider",
+                "https://sfm-api-production.up.railway.app/api/rider",
                 {
                     method: "GET",
                     headers: {
@@ -82,7 +82,7 @@ const Riders = () => {
         setReload(false);
         const getBranch = async () => {
             const response = await fetch(
-                "https://sfm-dbcc0a8f87a3.herokuapp.com/api/branch",
+                "https://sfm-api-production.up.railway.app/api/branch",
                 {
                     method: "GET",
                     headers: {

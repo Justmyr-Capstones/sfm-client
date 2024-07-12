@@ -9,7 +9,7 @@ const AddressBook = () => {
     useEffect(() => {
         const fetchAddress = async () => {
             const response = await fetch(
-                `https://sfm-dbcc0a8f87a3.herokuapp.comapi/address/${localStorage.getItem(
+                `https://sfm-api-production.up.railway.appapi/address/${localStorage.getItem(
                     "userID"
                 )}`
             );
@@ -18,7 +18,7 @@ const AddressBook = () => {
         };
         const fetchOrders = async () => {
             const response = await fetch(
-                `https://sfm-dbcc0a8f87a3.herokuapp.comapi/order/${localStorage.getItem(
+                `https://sfm-api-production.up.railway.appapi/order/${localStorage.getItem(
                     "userID"
                 )}`
             );

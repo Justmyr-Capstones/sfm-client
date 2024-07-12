@@ -21,7 +21,7 @@ const Profile = () => {
         const getCustomer = async () => {
             try {
                 const response = await fetch(
-                    `https://sfm-dbcc0a8f87a3.herokuapp.com/api/customer/${customerID}`,
+                    `https://sfm-api-production.up.railway.app/api/customer/${customerID}`,
                     {
                         method: "GET",
                         headers: {
@@ -71,7 +71,7 @@ const Profile = () => {
     const handleSaveClick = async () => {
         try {
             await fetch(
-                `https://sfm-dbcc0a8f87a3.herokuapp.com/api/customer/update/${customerID}`,
+                `https://sfm-api-production.up.railway.app/api/customer/update/${customerID}`,
                 {
                     method: "PATCH",
                     headers: {
